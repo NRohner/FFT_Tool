@@ -51,6 +51,7 @@ class MainWindow(ttk.Frame):
         applicationTitle = ttk.Label(titleFrame, text='FFT Tool', font=titleFont)
         applicationTitle.pack(side='right')
 
+        """
         # Adding the Codian Logo
         desiredLogoHeight = titleFont.metrics("linespace")
         logoImage = Image.open("./GUI_Assets/Codian_Logo.png")
@@ -61,6 +62,11 @@ class MainWindow(ttk.Frame):
         logoLabel = ttk.Label(titleFrame, image=logoPhoto)
         logoLabel.image = logoPhoto
         logoLabel.pack(side='left')
+        """
+
+        # Adding the codian logo without an image
+        codianName = ttk.Label(titleFrame, text='|Codian', font=titleFont)
+        codianName.pack(side='left')
 
         # container for user input
         input_labelframe = ttk.Labelframe(self, text='Select a CSV file', padding=(20, 10, 10, 5))
