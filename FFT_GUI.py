@@ -51,23 +51,6 @@ class MainWindow(ttk.Frame):
         applicationTitle = ttk.Label(titleFrame, text='FFT Tool', font=titleFont)
         applicationTitle.pack(side='right')
 
-        """
-        # Adding the Codian Logo
-        desiredLogoHeight = titleFont.metrics("linespace")
-        logoImage = Image.open("./GUI_Assets/Codian_Logo.png")
-        logoHeight = min(desiredLogoHeight, logoImage.size[1])
-        logoWidth = int((logoHeight / logoImage.size[1]) * logoImage.size[0])
-        logoImage = logoImage.resize((logoWidth, logoHeight))
-        logoPhoto = ImageTk.PhotoImage(logoImage)
-        logoLabel = ttk.Label(titleFrame, image=logoPhoto)
-        logoLabel.image = logoPhoto
-        logoLabel.pack(side='left')
-        """
-
-        # Adding the codian logo without an image
-        codianName = ttk.Label(titleFrame, text='|Codian', font=titleFont)
-        codianName.pack(side='left')
-
         # container for user input
         input_labelframe = ttk.Labelframe(self, text='Select a CSV file', padding=(20, 10, 10, 5))
         input_labelframe.pack(side='top', fill='x')
@@ -100,7 +83,7 @@ class MainWindow(ttk.Frame):
 
 
     def on_in_browse(self):
-        path = askopenfilename(title='Select a CSV file', filetypes=[('CSV Files', '*.csv;*.CSV')])
+        path = askopenfilename(title="Select a CSV file", filetypes=[("CSV Files", "*.csv; *.CSV")])
         if path:
             self.csv_path_var.set(path)
 
